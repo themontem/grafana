@@ -115,8 +115,8 @@ export class GrafanaCtrl {
 
 function setViewModeBodyClass(body: JQuery, mode: KioskUrlValue) {
   body.removeClass('view-mode--tv');
-  body.removeClass('view-mode--kiosk');
-  body.removeClass('view-mode--inactive');
+  //body.removeClass('view-mode--kiosk');
+  //body.removeClass('view-mode--inactive');
 
   switch (mode) {
     case 'tv': {
@@ -251,16 +251,16 @@ export function grafanaAppDirective(
       }
 
       function userActivityDetected() {
-        lastActivity = new Date().getTime();
-        if (!activeUser) {
-          activeUser = true;
-          body.removeClass('view-mode--inactive');
-        }
+        //lastActivity = new Date().getTime();
+        //if (!activeUser) {
+        //activeUser = true;
+        //body.removeClass('view-mode--inactive');
+        //}
       }
 
       // mouse and keyboard is user activity
-      body.mousemove(userActivityDetected);
-      body.keydown(userActivityDetected);
+      //body.mousemove(userActivityDetected);
+      //body.keydown(userActivityDetected);
       // set useCapture = true to catch event here
       document.addEventListener('wheel', userActivityDetected, { capture: true, passive: true });
       // treat tab change as activity

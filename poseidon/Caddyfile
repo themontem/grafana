@@ -1,0 +1,7 @@
+localhost
+
+proxy /monitor localhost:8091 {
+    without /monitor
+}
+
+proxy / localhost:3000
